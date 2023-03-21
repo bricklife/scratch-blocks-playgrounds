@@ -1,7 +1,7 @@
 const Blockly = require("scratch-blocks");
 
 // https://developers.google.com/blockly/guides/configure/web/configuration_struct
-window.workspace = Blockly.inject('blocks', {
+window.workspace = Blockly.inject('blocklyDiv', {
   collapse: true,
   comments: true,
   disable: false,

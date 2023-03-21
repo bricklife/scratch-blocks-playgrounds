@@ -5,16 +5,20 @@
 </head>
 
 <body>
-    <p>
-        <a href="javascript:void(workspace.setVisible(true))">Show</a>
-        - <a href="javascript:void(workspace.setVisible(false))">Hide</a>
-        <input type="button" value="Undo" onclick="workspace.undo()" />
-        <input type="button" value="Redo" onclick="workspace.undo(true)" />
-    </p>
-    
-    <div id="blocks"></div>
+    <div>
+        <p>
+            <a href="javascript:void(workspace.setVisible(true))">Show</a>
+            -
+            <a href="javascript:void(workspace.setVisible(false))">Hide</a>
 
-    <script src="main.js"></script>
+            <input type="button" value="Undo" onclick="workspace.undo()" />
+            <input type="button" value="Redo" onclick="workspace.undo(true)" />
+        </p>
+
+        <div id="blocklyDiv"></div>
+
+        <script src="main.js"></script>
+    </div>
 </body>
 
 </html>
