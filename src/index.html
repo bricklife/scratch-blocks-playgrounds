@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    <title>scratch-blocks-playgrounds</title>
+</head>
+
+<body>
+    <p>
+        <a href="javascript:void(workspace.setVisible(true))">Show</a>
+        - <a href="javascript:void(workspace.setVisible(false))">Hide</a>
+        <input type="button" value="Undo" onclick="workspace.undo()" />
+        <input type="button" value="Redo" onclick="workspace.undo(true)" />
+    </p>
+    
+    <div id="blocks"></div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
