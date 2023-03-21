@@ -1,7 +1,7 @@
 const Blockly = require("scratch-blocks");
 
 // https://developers.google.com/blockly/guides/configure/web/configuration_struct
-window.workspace = Blockly.inject('blocklyDiv', {
+const workspace = Blockly.inject('blocklyDiv', {
   collapse: true,
   comments: true,
   disable: false,
@@ -31,3 +31,14 @@ window.workspace = Blockly.inject('blocklyDiv', {
     dragShadowOpacity: 0.6
   }
 });
+
+function logger(e) {
+  console.log(e);
+}
+
+workspace.addChangeListener(logger);
+
+const flyoutWorkspace = (workspace.flyout_) ? workspace.flyout_.workspace_ : workspace.toolbox_.flyout_.workspace_;
+flyoutWorkspace.addChangeListener(logger);
+
+window.workspace = workspace;
