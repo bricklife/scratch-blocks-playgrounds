@@ -32,13 +32,14 @@ const workspace = Blockly.inject('blocklyDiv', {
   }
 });
 
-function logger(e) {
-  console.log(e);
-}
+workspace.addChangeListener(e => console.log('workspace', e));
 
-workspace.addChangeListener(logger);
+const toolboxWorkspace = workspace.getFlyout().getWorkspace();
+toolboxWorkspace.addChangeListener(e => console.log('toolbox', e));
+toolboxWorkspace.registerButtonCallback('MAKE_A_VARIABLE', e => console.log('MAKE_A_VARIABLE', e));
+toolboxWorkspace.registerButtonCallback('MAKE_A_LIST', e => console.log('MAKE_A_LIST', e));
+toolboxWorkspace.registerButtonCallback('MAKE_A_PROCEDURE', e => console.log('MAKE_A_PROCEDURE', e));
 
-const flyoutWorkspace = (workspace.flyout_) ? workspace.flyout_.workspace_ : workspace.toolbox_.flyout_.workspace_;
-flyoutWorkspace.addChangeListener(logger);
+Blockly.Procedures.externalProcedureDefCallback = (data, callback) => console.log('externalProcedureDefCallback', data);
 
 window.workspace = workspace;
